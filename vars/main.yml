@@ -1,0 +1,19 @@
+---
+# vars file for sysstat
+_sysstat_packages:
+  default:
+    - sysstat
+
+sysstat_packages: "{{ _sysstat_packages[ansible_distribution ~ '-' ~ ansible_distribution_major_version] | default(_sysstat_packages[ansible_distribution] | default(_sysstat_packages['default'])) }}"
+
+# _sysstat_config_directory:
+#   default: /etc
+
+# sysstat_config_directory: "{{ _sysstat_config_directory[ansible_distribution] | default(_sysstat_config_directory['default']) }}"
+
+# sysstat_config_file: sysstat.conf
+
+_sysstat_service:
+  default: sysstat
+
+sysstat_service: "{{ _sysstat_service[ansible_distribution] | default(_sysstat_service['default']) }}"

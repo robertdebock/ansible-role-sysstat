@@ -1,0 +1,35 @@
+---
+# tasks file for sysstat
+- name: test veriables and environment
+  assert:
+    that:
+      - sysstat_package_state is defined
+      - sysstat_package_state == "present" or
+        sysstat_package_state == "latest" or
+        sysstat_package_state == "absent"
+      - sysstat_ignore_docker is defined
+      - sysstat_ignore_docker or
+        not sysstat_ignore_docker
+
+- name: install sysstat
+  package:
+    name: "{{ sysstat_packages }}"
+    state: "{{ sysstat_package_state }}"
+  register: sysstat_install_sysstat
+  until: sysstat_install_sysstat is succeeded
+  retries: 3
+
+# - name: configure sysstat
+#   template:
+#     src: "{{ sysstat_config_file }}.j2"
+#     dest: "{{ sysstat_config_directory }}/{{ sysstat_config_file }}"
+#   notify:
+#     - restart sysstat
+
+- name: start and enable sysstat
+  service:
+    name: "{{ sysstat_service }}"
+    state: started
+    enabled: yes
+  when:
+    - ansible_virtualization_type != "docker" or sysstat_ignore_docker

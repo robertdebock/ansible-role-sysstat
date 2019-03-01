@@ -32,8 +32,6 @@ platforms:
     image: fedora:rawhide
   - name: sysstat-opensuse-leap
     image: opensuse:leap
-  - name: sysstat-opensuse-tumbleweed
-    image: opensuse:tumbleweed
   - name: sysstat-ubuntu-latest
     image: ubuntu:latest
   - name: sysstat-ubuntu-rolling

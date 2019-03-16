@@ -3,50 +3,63 @@ dependency:
   name: galaxy
   options:
     role-file: requirements.yml
-driver:
-  name: docker
 lint:
   name: yamllint
+driver:
+  name: docker
 platforms:
   - name: sysstat-alpine-edge
     image: alpine:edge
+    pre_build_image: yes
     command: sh -c "while true ; do sleep 1 ; done"
   - name: sysstat-alpine-latest
     image: alpine:latest
+    pre_build_image: yes
     command: sh -c "while true ; do sleep 1 ; done"
   - name: sysstat-archlinux
     image: archlinux/base
+    pre_build_image: yes
   - name: sysstat-centos-6
     image: centos:6
+    pre_build_image: yes
   - name: sysstat-centos-latest
     image: centos:latest
+    pre_build_image: yes
   - name: sysstat-debian-latest
     image: debian:latest
+    pre_build_image: yes
   - name: sysstat-debian-stable
     image: debian:stable
+    pre_build_image: yes
   - name: sysstat-debian-unstable
     image: debian:unstable
+    pre_build_image: yes
   - name: sysstat-fedora-latest
     image: fedora:latest
+    pre_build_image: yes
   - name: sysstat-fedora-rawhide
     image: fedora:rawhide
+    pre_build_image: yes
   - name: sysstat-opensuse-leap
     image: opensuse:leap
+    pre_build_image: yes
   - name: sysstat-ubuntu-latest
     image: ubuntu:latest
+    pre_build_image: yes
   - name: sysstat-ubuntu-rolling
-    image: ubuntu:artful
+    image: ubuntu:rolling
+    pre_build_image: yes
   - name: sysstat-ubuntu-devel
     image: ubuntu:devel
+    pre_build_image: yes
+  - name: sysstat-ubuntu-latest
+    image: ubuntu:latest
+    pre_build_image: yes
 provisioner:
   name: ansible
-  inventory:
-    group_vars:
-      all:
-        sysstat_ignore_docker: no
-    host_vars:
-      sysstat-fedora-rawhide:
-        ansible_python_interpreter: /usr/bin/python3
+  playbooks:
+    prepare: ../resources/prepare.yml
+    converge: ../resources/playbook.yml
   lint:
     name: ansible-lint
 scenario:

@@ -1,10 +1,2 @@
 ---
 # defaults file for sysstat
-
-# To update packages this role places on the system, set `sysstat_package_state` to `latest`.
-sysstat_package_state: present
-
-# Some Docker containers do not allow managing services, rebooting and writing
-# to some locations in /etc. The role skips tasks that will typically fail in
-# Docker. With this parameter you can tell the role to -not- skip these tasks.
-sysstat_ignore_docker: yes

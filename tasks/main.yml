@@ -1,9 +1,5 @@
 ---
 # tasks file for sysstat
-- name: test veriables and environment
-  assert:
-    that:
-
 - name: install sysstat
   package:
     name: "{{ sysstat_packages }}"
@@ -11,13 +7,6 @@
   register: sysstat_install_sysstat
   until: sysstat_install_sysstat is succeeded
   retries: 3
-
-# - name: configure sysstat
-#   template:
-#     src: "{{ sysstat_config_file }}.j2"
-#     dest: "{{ sysstat_config_directory }}/{{ sysstat_config_file }}"
-#   notify:
-#     - restart sysstat
 
 - name: start and enable sysstat
   service:

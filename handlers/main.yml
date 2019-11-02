@@ -1,8 +1,0 @@
----
-# handlers file for sysstat
-- name: restart sysstat
-  service:
-    name: "{{ sysstat_service }}"
-    state: restarted
-  when:
-    - ansible_virtualization_type != "docker"

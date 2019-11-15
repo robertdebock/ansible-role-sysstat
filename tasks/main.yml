@@ -13,3 +13,5 @@
     name: "{{ sysstat_service }}"
     state: started
     enabled: yes
+  when:
+    - sysstat_service | length

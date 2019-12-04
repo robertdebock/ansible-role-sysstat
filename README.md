@@ -104,7 +104,6 @@ Some variarations of the build matrix do not work. These are the variations and 
 | amazonlinux:1 | Service is not idempotent |
 
 
-
 Testing
 -------
 

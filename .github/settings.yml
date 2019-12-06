@@ -1,4 +1,7 @@
 ---
+#
+# Ansible managed
+#
 repository:
   description: Install, start and enable sysstat on your system.
   homepage: https://robertdebock.nl/

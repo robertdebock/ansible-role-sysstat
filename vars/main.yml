@@ -1,5 +1,6 @@
 ---
 # vars file for sysstat
+
 sysstat_packages:
   - sysstat
 

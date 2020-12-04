@@ -1,5 +1,6 @@
 ---
 # tasks file for sysstat
+
 - name: install sysstat
   package:
     name: "{{ sysstat_packages }}"

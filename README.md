@@ -2,9 +2,9 @@
 
 Install, start and enable sysstat on your system.
 
-|Travis|GitHub|Quality|Downloads|Version|
-|------|------|-------|---------|-------|
-|[![travis](https://travis-ci.com/robertdebock/ansible-role-sysstat.svg?branch=master)](https://travis-ci.com/robertdebock/ansible-role-sysstat)|[![github](https://github.com/robertdebock/ansible-role-sysstat/workflows/Ansible%20Molecule/badge.svg)](https://github.com/robertdebock/ansible-role-sysstat/actions)|[![quality](https://img.shields.io/ansible/quality/38168)](https://galaxy.ansible.com/robertdebock/sysstat)|[![downloads](https://img.shields.io/ansible/role/d/38168)](https://galaxy.ansible.com/robertdebock/sysstat)|[![Version](https://img.shields.io/github/release/robertdebock/ansible-role-sysstat.svg)](https://github.com/robertdebock/ansible-role-sysstat/releases/)|
+|Travis|GitHub|GitLab|Quality|Downloads|Version|
+|------|------|------|-------|---------|-------|
+|[![travis](https://travis-ci.com/robertdebock/ansible-role-sysstat.svg?branch=master)](https://travis-ci.com/robertdebock/ansible-role-sysstat)|[![github](https://github.com/robertdebock/ansible-role-sysstat/workflows/Ansible%20Molecule/badge.svg)](https://github.com/robertdebock/ansible-role-sysstat/actions)|[![gitlab](https://gitlab.com/robertdebock/ansible-role-sysstat/badges/master/pipeline.svg)](https://gitlab.com/robertdebock/ansible-role-sysstat)|[![quality](https://img.shields.io/ansible/quality/38168)](https://galaxy.ansible.com/robertdebock/sysstat)|[![downloads](https://img.shields.io/ansible/role/d/38168)](https://galaxy.ansible.com/robertdebock/sysstat)|[![Version](https://img.shields.io/github/release/robertdebock/ansible-role-sysstat.svg)](https://github.com/robertdebock/ansible-role-sysstat/releases/)|
 
 ## [Example Playbook](#example-playbook)
 
@@ -38,10 +38,11 @@ Also see a [full explanation and example](https://robertdebock.nl/how-to-use-the
 
 ## [Requirements](#requirements)
 
-- Access to a repository containing packages, likely on the internet.
-- A recent version of Ansible. (Tests run on the current, previous and next release of Ansible.)
+- pip packages listed in [requirements.txt](https://github.com/robertdebock/ansible-role-sysstat/blob/master/requirements.txt).
 
 ## [Status of requirements](#status-of-requirements)
+
+The following roles are used to prepare a system. You may choose to prepare your system in another way, I have tested these roles as well.
 
 | Requirement | Travis | GitHub |
 |-------------|--------|--------|

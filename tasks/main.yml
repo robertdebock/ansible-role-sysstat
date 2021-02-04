@@ -6,6 +6,12 @@
     name: "{{ sysstat_packages }}"
     state: present
 
+- name: enable sysstat
+  lineinfile:
+    path: /etc/default/sysstat
+    regexp: '^ENABLED='
+    line: 'ENABLED="true"'
+
 - name: start and enable sysstat
   service:
     name: "{{ sysstat_service }}"

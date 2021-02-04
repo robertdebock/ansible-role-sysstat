@@ -11,6 +11,9 @@
     path: /etc/default/sysstat
     regexp: '^ENABLED='
     line: 'ENABLED="true"'
+    owner: root
+    group: root
+    mode: "0644"
 
 - name: start and enable sysstat
   service:

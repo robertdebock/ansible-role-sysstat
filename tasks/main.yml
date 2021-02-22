@@ -12,7 +12,7 @@
     regexp: '^ENABLED='
     line: 'ENABLED="true"'
     owner: root
-    ansible.builtin.group: root
+    group: root
     mode: "0644"
   when:
     - ansible_os_family == "Debian"

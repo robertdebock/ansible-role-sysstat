@@ -5,4 +5,4 @@
 repository:
   description: Install, start and enable sysstat on your system.
   homepage: https://robertdebock.nl/
-  topics: sysstat, ansible, molecule, tox, playbook
+  topics: sysstat, monitoring, system, security, ansible, molecule, tox, playbook

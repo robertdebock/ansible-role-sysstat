@@ -1,4 +1,4 @@
-# Ansible role [sysstat](#sysstat)
+# [Ansible role sysstat](#sysstat)
 
 Install, start and enable sysstat on your system.
 

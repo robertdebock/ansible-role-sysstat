@@ -23,4 +23,4 @@
     state: started
     enabled: true
   when:
-    - sysstat_service | length
+    - sysstat_service | length > 0

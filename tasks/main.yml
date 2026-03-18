@@ -15,7 +15,7 @@
     group: root
     mode: "0644"
   when:
-    - ansible_os_family == "Debian"
+    - ansible_facts['os_family'] == "Debian"
 
 - name: Start and enable sysstat
   ansible.builtin.service:
